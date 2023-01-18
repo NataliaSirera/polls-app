@@ -11,19 +11,23 @@ const Dashboard = ({ questions, authedUser }) => {
     question.optionTwo.votes.includes(authedUser);
 
   return (
-    <div>
-      <h1>New Questions</h1>
-      {questions.filter(getUnanswered).map((question) => (
-        <li key={question.id}>
-          <QuestionCard id={question.id} />
-        </li>
-      ))}
-      <h1>Done</h1>
-      {questions.filter(getAnswered).map((question) => (
-        <li key={question.id}>
-          <QuestionCard id={question.id} />
-        </li>
-      ))}
+    <div className="text-center">
+      <h1 className="text-3xl font-bold mt-8 mb-3">New Questions</h1>
+      <ul className="grid grid-cols-3 gap-6 mx-8">
+        {questions.filter(getUnanswered).map((question) => (
+          <li key={question.id}>
+            <QuestionCard id={question.id} />
+          </li>
+        ))}
+      </ul>
+      <h1 className="text-3xl font-bold mt-8 mb-3">Done</h1>
+      <ul className="grid grid-cols-3 gap-6 mx-8">
+        {questions.filter(getAnswered).map((question) => (
+          <li key={question.id}>
+            <QuestionCard id={question.id} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
