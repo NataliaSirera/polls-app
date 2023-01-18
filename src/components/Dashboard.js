@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import QuestionCard from "./QuestionCard";
 
 const Dashboard = ({ questions, authedUser }) => {
   const getUnanswered = (question) =>
@@ -13,11 +14,15 @@ const Dashboard = ({ questions, authedUser }) => {
     <div>
       <h1>New Questions</h1>
       {questions.filter(getUnanswered).map((question) => (
-        <li key={question.id}>{question.id}</li>
+        <li key={question.id}>
+          <QuestionCard id={question.id} />
+        </li>
       ))}
       <h1>Done</h1>
       {questions.filter(getAnswered).map((question) => (
-        <li key={question.id}>{question.id}</li>
+        <li key={question.id}>
+          <QuestionCard id={question.id} />
+        </li>
       ))}
     </div>
   );
