@@ -1,16 +1,18 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
+import Dashboard from "./Dashboard";
 
 const App = (props) => {
   useEffect(() => {
     props.dispatch(handleInitialData());
   }, []);
-  return (
-    <div className="App">
-      <h1 className="text-3xl font-bold">Polls App</h1>
-    </div>
-  );
+
+  return <div>{props.loading === true ? null : <Dashboard />}</div>;
 };
 
-export default connect()(App);
+const mapStateToProps = ({ authedUser }) => ({
+  loading: authedUser === null,
+});
+
+export default connect(mapStateToProps)(App);
