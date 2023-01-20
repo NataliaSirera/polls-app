@@ -1,16 +1,7 @@
 import { connect } from "react-redux";
+import { formatDate } from "../utils/helpers";
 
 const QuestionCard = ({ question, users }) => {
-  const formatDate = (timestamp) => {
-    const date = new Date(timestamp);
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    const hour = date.getHours();
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-    return `${hour}:${minutes} | ${day}/${month}/${year}`;
-  };
-
   if (question === null) {
     // TODO redirect to 404
     return <p>This question doesn't exist</p>;
