@@ -4,6 +4,7 @@ import { handleInitialData } from "../actions/shared";
 import Dashboard from "./Dashboard";
 import Navbar from "./Navbar";
 import ViewPoll from "./ViewPoll";
+import Leaderboard from "./Leaderboard";
 
 const App = (props) => {
   useEffect(() => {
@@ -16,7 +17,8 @@ const App = (props) => {
         <div>
           <Navbar currentPage={"home"} />
           {/* <Dashboard /> */}
-          <ViewPoll id={"6ni6ok3ym7mf1p33lnez"} />
+          {/* <ViewPoll id={"6ni6ok3ym7mf1p33lnez"} /> */}
+          <Leaderboard />
         </div>
       )}
     </div>
