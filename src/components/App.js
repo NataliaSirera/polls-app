@@ -5,6 +5,7 @@ import Dashboard from "./Dashboard";
 import Navbar from "./Navbar";
 import ViewPoll from "./ViewPoll";
 import Leaderboard from "./Leaderboard";
+import NewPoll from "./NewPoll";
 
 const App = (props) => {
   useEffect(() => {
@@ -17,8 +18,9 @@ const App = (props) => {
         <div>
           <Navbar currentPage={"home"} />
           {/* <Dashboard /> */}
-          <ViewPoll id={"vthrdm985a262al8qx3do"} />
+          {/* <ViewPoll id={"vthrdm985a262al8qx3do"} /> */}
           {/* <Leaderboard /> 6ni6ok3ym7mf1p33lnez */}
+          <NewPoll />
         </div>
       )}
     </div>
