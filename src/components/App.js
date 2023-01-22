@@ -17,8 +17,8 @@ const App = (props) => {
         <div>
           <Navbar currentPage={"home"} />
           {/* <Dashboard /> */}
-          {/* <ViewPoll id={"6ni6ok3ym7mf1p33lnez"} /> */}
-          <Leaderboard />
+          <ViewPoll id={"vthrdm985a262al8qx3do"} />
+          {/* <Leaderboard /> 6ni6ok3ym7mf1p33lnez */}
         </div>
       )}
     </div>

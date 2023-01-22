@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import { formatDate } from "../utils/helpers";
+import { handleAddAnswer } from "../actions/questions";
 
-const ViewPoll = ({ question, users, authedUser }) => {
+const ViewPoll = ({ dispatch, question, users, authedUser }) => {
   if (question === null) {
     // TODO redirect to 404
     return <p>This question doesn't exist</p>;
@@ -9,6 +10,12 @@ const ViewPoll = ({ question, users, authedUser }) => {
 
   const userVote1 = question.optionOne.votes.includes(authedUser);
   const userVote2 = question.optionTwo.votes.includes(authedUser);
+  const hasVoted = userVote1 || userVote2;
+
+  const handleVote = (e) => {
+    e.preventDefault();
+    dispatch(handleAddAnswer(authedUser, question.id, e.target.value));
+  };
 
   const votes1 = question.optionOne.votes.length;
   const votes2 = question.optionTwo.votes.length;
@@ -32,38 +39,60 @@ const ViewPoll = ({ question, users, authedUser }) => {
       <p className="text-2xl my-4 font-medium">Would you rather ... ? </p>
       <div className="grid grid-cols-2 gap-8 mx-auto max-w-screen-xl">
         <div className="border rounded relative">
-          <p className="font-medium text-lg py-2 px-8 bg-green-500">
+          <button
+            className={`font-medium text-lg py-2 px-8 w-full ${
+              hasVoted ? "bg-green-500" : "bg-green-300 hover:bg-green-500"
+            }`}
+            disabled={hasVoted}
+            onClick={handleVote}
+            value="optionOne"
+          >
             {question.optionOne.text}
-          </p>
-          <p className="pt-2">
-            <span className="text-4xl">{votes1percentage}</span>
-            <span className="text-2xl">%</span>
-          </p>
-          <p className="pb-2 px-24">
-            {`(${votes1})`}
-            {userVote1 && (
-              <span className="text-xs text-white bg-green-800 rounded-full absolute px-2 py-1 right-2 bottom-2">
-                you voted
-              </span>
-            )}
-          </p>
+          </button>
+          {hasVoted && (
+            <div>
+              <p className="pt-2">
+                <span className="text-4xl">{votes1percentage}</span>
+                <span className="text-2xl">%</span>
+              </p>
+              <p className="pb-2 px-24">
+                {`(${votes1})`}
+                {userVote1 && (
+                  <span className="text-xs text-white bg-green-800 rounded-full absolute px-2 py-1 right-2 bottom-2">
+                    you voted
+                  </span>
+                )}
+              </p>
+            </div>
+          )}
         </div>
         <div className="border rounded relative">
-          <p className="font-medium text-lg py-2 px-8 bg-green-500">
+          <button
+            className={`font-medium text-lg py-2 px-8 w-full ${
+              hasVoted ? "bg-green-500" : "bg-green-300 hover:bg-green-500"
+            }`}
+            disabled={hasVoted}
+            onClick={handleVote}
+            value="optionTwo"
+          >
             {question.optionTwo.text}
-          </p>
-          <p className="pt-2">
-            <span className="text-4xl">{votes2percentage}</span>
-            <span className="text-2xl">%</span>
-          </p>
-          <p className="pb-2 px-24">
-            {`(${votes2})`}
-            {userVote2 && (
-              <span className="text-xs text-white bg-green-800 rounded-full absolute px-2 py-1 right-2 bottom-2">
-                you voted
-              </span>
-            )}
-          </p>
+          </button>
+          {hasVoted && (
+            <div>
+              <p className="pt-2">
+                <span className="text-4xl">{votes2percentage}</span>
+                <span className="text-2xl">%</span>
+              </p>
+              <p className="pb-2 px-24">
+                {`(${votes2})`}
+                {userVote2 && (
+                  <span className="text-xs text-white bg-green-800 rounded-full absolute px-2 py-1 right-2 bottom-2">
+                    you voted
+                  </span>
+                )}
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
