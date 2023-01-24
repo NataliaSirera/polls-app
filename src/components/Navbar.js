@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-const Navbar = ({ authedUser, users, currentPage }) => {
+const Navbar = ({ authedUser, authedUserAvatarURL, currentPage }) => {
   return (
     <ul className="flex mx-8 mt-2 border-b font-medium text-gray-500">
       <li
@@ -11,7 +12,7 @@ const Navbar = ({ authedUser, users, currentPage }) => {
             : "border-transparent hover:border-gray-500 hover:text-gray-700")
         }
       >
-        Home
+        <Link to="/">Home</Link>
       </li>
       <li
         className={
@@ -21,7 +22,7 @@ const Navbar = ({ authedUser, users, currentPage }) => {
             : "border-transparent hover:border-gray-500 hover:text-gray-700")
         }
       >
-        Leaderboard
+        <Link to="/leaderboard">Leaderboard</Link>
       </li>
       <li
         className={
@@ -31,11 +32,11 @@ const Navbar = ({ authedUser, users, currentPage }) => {
             : "border-transparent hover:border-gray-500 hover:text-gray-700")
         }
       >
-        New
+        <Link to="/add">New</Link>
       </li>
       <img
         className="h-8 w-8 ml-auto border-4 border-white"
-        src={users[authedUser].avatarURL}
+        src={authedUserAvatarURL}
         alt={`Avatar of ${authedUser}`}
       />
       <li className="mx-2 py-1 text-sm inline-block text-gray-700">
@@ -50,7 +51,7 @@ const Navbar = ({ authedUser, users, currentPage }) => {
 
 const mapStateToProps = ({ authedUser, users }) => ({
   authedUser,
-  users,
+  authedUserAvatarURL: users[authedUser]?.avatarURL,
 });
 
 export default connect(mapStateToProps)(Navbar);

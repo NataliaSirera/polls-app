@@ -1,27 +1,30 @@
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { formatDate } from "../utils/helpers";
 
-const QuestionCard = ({ question, users }) => {
+const QuestionCard = ({ question, users, id }) => {
   if (question === null) {
     // TODO redirect to 404
     return <p>This question doesn't exist</p>;
   }
 
   return (
-    <div className="border rounded border-grey-400 p-4">
-      <img
-        className="h-24 w-24 mx-auto"
-        src={users[question.author].avatarURL}
-        alt={`Avatar of ${question.author}`}
-      />
-      <p className="text-xl font-medium mt-2">{question.author}</p>
-      <p className="text-sm text-gray-400 mt-1">
-        {formatDate(question.timestamp)}
-      </p>
-      <button className="border w-full rounded border-green-600 text-green-600 mt-4">
-        Show
-      </button>
-    </div>
+    <Link to={`questions/${id}`}>
+      <div className="border rounded border-grey-400 p-4">
+        <img
+          className="h-24 w-24 mx-auto"
+          src={users[question.author].avatarURL}
+          alt={`Avatar of ${question.author}`}
+        />
+        <p className="text-xl font-medium mt-2">{question.author}</p>
+        <p className="text-sm text-gray-400 mt-1">
+          {formatDate(question.timestamp)}
+        </p>
+        <button className="border w-full rounded border-green-600 text-green-600 mt-4">
+          Show
+        </button>
+      </div>
+    </Link>
   );
 };
 
