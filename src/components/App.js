@@ -6,6 +6,7 @@ import Dashboard from "./Dashboard";
 import ViewPoll from "./ViewPoll";
 import Leaderboard from "./Leaderboard";
 import NewPoll from "./NewPoll";
+import NotFound from "./NotFound";
 
 const App = (props) => {
   useEffect(() => {
@@ -20,6 +21,8 @@ const App = (props) => {
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/add" element={<NewPoll />} />
           <Route path="/questions/:id" element={<ViewPoll />} />
+          <Route path="/404" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       )}
     </div>

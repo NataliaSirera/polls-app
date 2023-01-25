@@ -1,11 +1,10 @@
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { formatDate } from "../utils/helpers";
 
 const QuestionCard = ({ question, users, id }) => {
   if (question === null) {
-    // TODO redirect to 404
-    return <p>This question doesn't exist</p>;
+    return <Navigate to="/404" />;
   }
 
   return (

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { formatDate } from "../utils/helpers";
 import { handleAddAnswer } from "../actions/questions";
 import Navbar from "./Navbar";
@@ -8,8 +8,7 @@ const ViewPoll = ({ dispatch, questions, authedUserAvatarURL, authedUser }) => {
   const { id } = useParams();
 
   if (questions[id] === undefined) {
-    // TODO redirect to 404
-    return <p>This question doesn't exist</p>;
+    return <Navigate to="/404" />;
   }
 
   let question = questions[id];
