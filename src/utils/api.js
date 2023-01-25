@@ -21,3 +21,21 @@ export function saveQuestion(question) {
 export function saveQuestionAnswer(authedUser, qid, answer) {
   return _saveQuestionAnswer({ authedUser, qid, answer });
 }
+
+export function authenticate(username, password) {
+  return new Promise((resolve, reject) => {
+    _getUsers().then((users) => {
+      let user = undefined;
+      if (users) {
+        user = Object.values(users).find(
+          (user) => user.id === username && user.password === password
+        );
+      }
+      if (user !== undefined) {
+        resolve();
+      } else {
+        reject();
+      }
+    });
+  });
+}

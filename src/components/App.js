@@ -7,6 +7,7 @@ import ViewPoll from "./ViewPoll";
 import Leaderboard from "./Leaderboard";
 import NewPoll from "./NewPoll";
 import NotFound from "./NotFound";
+import Login from "./Login";
 
 const App = (props) => {
   useEffect(() => {
@@ -18,10 +19,11 @@ const App = (props) => {
       {props.loading === true ? null : (
         <Routes>
           <Route path="/" exact element={<Dashboard />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/add" element={<NewPoll />} />
+          <Route path="/leaderboard" exact element={<Leaderboard />} />
+          <Route path="/add" exact element={<NewPoll />} />
           <Route path="/questions/:id" element={<ViewPoll />} />
-          <Route path="/404" element={<NotFound />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/404" exact element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
@@ -29,8 +31,8 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = ({ authedUser }) => ({
-  loading: authedUser === null,
+const mapStateToProps = ({ users }) => ({
+  loading: users && Object.keys(users).length === 0,
 });
 
 export default connect(mapStateToProps)(App);
