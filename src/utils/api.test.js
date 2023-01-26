@@ -7,10 +7,10 @@ describe("authenticate", () => {
   });
 
   it("returns error if an incorrect user or password is passed", async () => {
-    await authenticate("sarahedoo", "password123").catch((e) =>
+    await authenticate("wrongUser", "password123").catch((e) =>
       expect(e).toEqual("The username or password is incorrect")
     );
-    await authenticate("sarahedoo", "password1234").catch((e) =>
+    await authenticate("sarahedo", "wrongPassword").catch((e) =>
       expect(e).toEqual("The username or password is incorrect")
     );
   });
