@@ -48,6 +48,7 @@ const Login = ({ dispatch }) => {
                 type="text"
                 name="username"
                 id="username"
+                data-testid="username"
                 placeholder="User"
                 className="px-3 py-2 bg-white border border-gray-300 shadow-sm w-full rounded placeholder-gray-400"
               />
@@ -63,6 +64,7 @@ const Login = ({ dispatch }) => {
                 type="password"
                 name="password"
                 id="password"
+                data-testid="password"
                 placeholder="Password"
                 className="px-3 py-2 bg-white border border-gray-300 shadow-sm w-full rounded placeholder-gray-400"
               />

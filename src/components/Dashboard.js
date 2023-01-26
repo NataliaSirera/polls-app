@@ -31,6 +31,7 @@ const Dashboard = ({ questions, authedUser }) => {
         <label className="inline-flex  cursor-pointer mb-3">
           <input
             type="checkbox"
+            data-testid="checkboxDoneQuestions"
             value=""
             className="sr-only peer"
             defaultChecked="true"

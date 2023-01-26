@@ -1,0 +1,224 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard renders the component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div>
+        <ul
+          class="flex mx-8 mt-2 border-b font-medium text-gray-500"
+        >
+          <li
+            class="mr-2 py-1 text-sm inline-block border-b-2 text-black border-black"
+          >
+            <a
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li
+            class="mx-2 py-1 text-sm inline-block border-b-2 border-transparent hover:border-gray-500 hover:text-gray-700"
+          >
+            <a
+              href="/leaderboard"
+            >
+              Leaderboard
+            </a>
+          </li>
+          <li
+            class="mx-2 py-1 text-sm inline-block border-b-2 border-transparent hover:border-gray-500 hover:text-gray-700"
+          >
+            <a
+              href="/add"
+            >
+              New
+            </a>
+          </li>
+          <img
+            alt="Avatar of null"
+            class="h-8 w-8 ml-auto border-4 border-white"
+          />
+          <li
+            class="mx-2 py-1 text-sm inline-block text-gray-700"
+          />
+          <li
+            class="ml-2 py-1 text-sm inline-block border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500"
+          >
+            <button>
+              Logout
+            </button>
+          </li>
+        </ul>
+        <div
+          class="text-center px-8"
+        >
+          <h1
+            class="text-3xl font-bold mt-8 mb-3"
+          >
+            Questions
+          </h1>
+          <label
+            class="inline-flex  cursor-pointer mb-3"
+          >
+            <input
+              checked=""
+              class="sr-only peer"
+              data-testid="checkboxDoneQuestions"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="px-3 py-1 text-xs text-blue-500 font-bold border-2 border-blue-500 rounded-l-full  peer peer-checked:text-gray-500 peer-checked:font-normal peer-checked:border peer-checked:border-gray-300 peer-checked:border-r-0"
+            >
+              New questions
+            </span>
+            <span
+              class="px-3 py-1 text-xs text-gray-500 font-normal border border-gray-300 rounded-r-full border-l-0 peer peer-checked:text-green-600 peer-checked:font-bold peer-checked:border-2 peer-checked:border-green-600"
+            >
+              Done questions
+            </span>
+          </label>
+          <ul
+            class="grid grid-cols-3 gap-6 mx-auto max-w-screen-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
+      <ul
+        class="flex mx-8 mt-2 border-b font-medium text-gray-500"
+      >
+        <li
+          class="mr-2 py-1 text-sm inline-block border-b-2 text-black border-black"
+        >
+          <a
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li
+          class="mx-2 py-1 text-sm inline-block border-b-2 border-transparent hover:border-gray-500 hover:text-gray-700"
+        >
+          <a
+            href="/leaderboard"
+          >
+            Leaderboard
+          </a>
+        </li>
+        <li
+          class="mx-2 py-1 text-sm inline-block border-b-2 border-transparent hover:border-gray-500 hover:text-gray-700"
+        >
+          <a
+            href="/add"
+          >
+            New
+          </a>
+        </li>
+        <img
+          alt="Avatar of null"
+          class="h-8 w-8 ml-auto border-4 border-white"
+        />
+        <li
+          class="mx-2 py-1 text-sm inline-block text-gray-700"
+        />
+        <li
+          class="ml-2 py-1 text-sm inline-block border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500"
+        >
+          <button>
+            Logout
+          </button>
+        </li>
+      </ul>
+      <div
+        class="text-center px-8"
+      >
+        <h1
+          class="text-3xl font-bold mt-8 mb-3"
+        >
+          Questions
+        </h1>
+        <label
+          class="inline-flex  cursor-pointer mb-3"
+        >
+          <input
+            checked=""
+            class="sr-only peer"
+            data-testid="checkboxDoneQuestions"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="px-3 py-1 text-xs text-blue-500 font-bold border-2 border-blue-500 rounded-l-full  peer peer-checked:text-gray-500 peer-checked:font-normal peer-checked:border peer-checked:border-gray-300 peer-checked:border-r-0"
+          >
+            New questions
+          </span>
+          <span
+            class="px-3 py-1 text-xs text-gray-500 font-normal border border-gray-300 rounded-r-full border-l-0 peer peer-checked:text-green-600 peer-checked:font-bold peer-checked:border-2 peer-checked:border-green-600"
+          >
+            Done questions
+          </span>
+        </label>
+        <ul
+          class="grid grid-cols-3 gap-6 mx-auto max-w-screen-2xl"
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
