@@ -32,9 +32,9 @@ export function authenticate(username, password) {
         );
       }
       if (user !== undefined) {
-        resolve();
+        resolve(true);
       } else {
-        reject();
+        reject("The username or password is incorrect");
       }
     });
   });
