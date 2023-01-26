@@ -8,6 +8,7 @@ import Leaderboard from "./Leaderboard";
 import NewPoll from "./NewPoll";
 import NotFound from "./NotFound";
 import Login from "./Login";
+import PrivateRoute from "./PrivateRoute";
 
 const App = (props) => {
   useEffect(() => {
@@ -18,10 +19,41 @@ const App = (props) => {
     <div>
       {props.loading === true ? null : (
         <Routes>
-          <Route path="/" exact element={<Dashboard />} />
-          <Route path="/leaderboard" exact element={<Leaderboard />} />
-          <Route path="/add" exact element={<NewPoll />} />
-          <Route path="/questions/:id" element={<ViewPoll />} />
+          <Route
+            path="/"
+            exact
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/leaderboard"
+            exact
+            element={
+              <PrivateRoute>
+                <Leaderboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/add"
+            exact
+            element={
+              <PrivateRoute>
+                <NewPoll />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/questions/:id"
+            element={
+              <PrivateRoute>
+                <ViewPoll />
+              </PrivateRoute>
+            }
+          />
           <Route path="/login" exact element={<Login />} />
           <Route path="/404" exact element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
