@@ -23,7 +23,13 @@ const Login = ({ dispatch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(handleLogin(username, password))
-      .then(() => navigate("/"))
+      .then(() => {
+        if (window.history.state && window.history.state.idx > 0) {
+          navigate(-1);
+        } else {
+          navigate("/");
+        }
+      })
       .catch(() => setLogError(true));
   };
 
@@ -67,7 +73,7 @@ const Login = ({ dispatch }) => {
               The username or password is incorrect. Please try again.
             </p>
           )}
-          <div className="mt-6 text-center">
+          <div className="mt-6 mb-6 text-center">
             <button
               type="submit"
               disabled={username === "" || password === ""}
