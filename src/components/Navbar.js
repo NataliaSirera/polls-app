@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
+import { handleLogout } from "../actions/authedUser";
 
-const Navbar = ({ authedUser, authedUserAvatarURL, currentPage }) => {
+const Navbar = ({ authedUser, authedUserAvatarURL, currentPage, dispatch }) => {
+  const navigate = useNavigate();
+
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch(handleLogout());
+    navigate("/login");
+  };
+
   return (
     <ul className="flex mx-8 mt-2 border-b font-medium text-gray-500">
       <li
@@ -43,7 +52,7 @@ const Navbar = ({ authedUser, authedUserAvatarURL, currentPage }) => {
         {authedUser}
       </li>
       <li className="ml-2 py-1 text-sm inline-block border-b-2 border-transparent hover:text-gray-600 hover:border-gray-500">
-        Logout
+        <button onClick={logout}>Logout</button>
       </li>
     </ul>
   );
